@@ -8,22 +8,22 @@ body{
 
 h1{
     font-family: 'Gravitas One', sans-serif;
-    font-size: 480%;
-    color: #a7d0cd;
-    /* color: #fff; */
-    text-shadow: 2px 2px 0 #9dbeb9;
+    font-size: 5vmax;
+    /* color: #a7d0cd; */
+    color: #fff;
+    text-shadow: -2px -2px 0 #9dbeb9;
 }
 
 header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #eeeeee;
-    width: 48rem;
+    /* background-color: #eeeeee; */
+    width: 100vw
     height: 11rem;
     text-align: center;
     margin: 5em auto 0;
-    box-shadow: 6px 6px 5px 0 #9dbeb9;
+    /* box-shadow: 6px 6px 5px 0 #9dbeb9; */
 }
 
 footer{
@@ -36,6 +36,7 @@ footer{
     text-align: center;
     box-shadow: 8px 8px 5px 0 #9dbeb9;
     margin: 5px 0;
+    font-size: 1.5vmin;
 }
 
 .body{
@@ -47,19 +48,36 @@ footer{
 
 .card{
     background-color: #eeeeee;
-    width: 22rem; */
-    /* height: 25rem; */
+    width: 22rem;
+    height: 25rem;
     text-align: center;
     margin: 2em;
     box-shadow: 8px 8px 5px 0 #9dbeb9;
     border-radius: 10px;
     padding: 5px;
     cursor: pointer;
+    position: relative;
+}
+.card:hover{
+    box-shadow: 10px 10px 20px 10px #9dbeb9;
+    /* opacity: 1; */
+    background-color: white;
+}
+/* .card:hover .card-top p{
+    opacity: 1;
+    transition: opacity 1500ms;
+} */
+.card:hover .card-top{
+    visibility: hidden;
+}
+.card:hover .card-bot{
+    visibility: visible;
 }
 
-.emoji{
-    font-size: 5em;
-    margin: 25px auto;
+.card-top h6{
+    font-size: 9vmax;
+    margin: 0;
+    /* font-weight: lighter; */
 }
 
 .cardTitle{
@@ -71,4 +89,38 @@ footer{
 .cardDesc{
     margin: 25px;
     line-height: 1.666;
+}
+
+.card-bot{
+    position: absolute;
+    visibility: hidden;
+    top: 0; left: 0;
+}
+
+.card-top{
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.card-top p{
+    color: grey;
+    animation: fadeIn linear 5s;
+}
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+.card-bot h6{
+    color: #9dbeb9;
+    margin: 2em 5px;
+    font-size: 2.5vmin;
+}
+
+.card-bot p{
+    font-size: 1.85vmin;
 }
